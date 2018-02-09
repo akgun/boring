@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed
+    xmlns="http://www.w3.org/2005/Atom">
+    <title type="text">ntv.com.tr</title>
+    <subtitle type="text">NTV Haber - Türkiye ve Dünya Gündemi Güncel Son Dakika Haberleri</subtitle>
+    <id>https://www.ntv.com.tr/</id>
+    <rights type="text">Telif Hakkı 2014 ntv.com.tr</rights>
+    <updated>2018-02-09T12:30:43Z</updated>
+    <entry>
+        <id>https://www.ntv.com.tr/ekonomi/unlu-bankaci-qnb-finansinvesti-birakti-bitcoin-aracilik-sirketi-aldi,BMKaUVAu_0KbscTmi94j-A</id>
+        <title type="text">Ünlü borsacı Bitcoin şirketini aldı</title>
+        <summary type="text">QNB Finansinvest’in CEO’su Özgür Güneri, 18 yıllık borsacılık kariyeri sonrası BTCTürk adlı Bitcoin aracılık şirketinin yüzde 95’ini satın aldı ve CEO olarak başına geçti</summary>
+        <published>2018-02-09T14:43:00+03:00</published>
+        <updated>2018-02-09T12:30:43Z</updated>
+        <author>
+            <name>NTV</name>
+        </author>
+        <link rel="alternate" href="https://www.ntv.com.tr/ekonomi/unlu-bankaci-qnb-finansinvesti-birakti-bitcoin-aracilik-sirketi-aldi,BMKaUVAu_0KbscTmi94j-A" />
+        <content type="html">&lt;img src="https://cdn1.ntv.com.tr/gorsel/NDXQRUVO206ZFO7qtDXyqg.jpg?width=600&amp;mode=crop&amp;scale=both&amp;v=00010101000000000" alt="Ünlü bankacı QNB Finansinvest&amp;apos;i bıraktı, Bitcoin aracılık şirketi aldı" /&gt;&lt;p&gt;QNB Finansinvest’in CEO’su Özgür Güneri, 18 yıllık borsacılık kariyeri sonrası BTCTürk adlı Bitcoin aracılık şirketinin yüzde 95’ini satın aldı ve CEO olarak başına geçti&lt;/p&gt;</content>
+    </entry>
+    <entry>
+        <id>https://www.ntv.com.tr/teknoloji/cin-internet-uzerinden-calisacak-internet-mahkemesi-kurdu,e2l_8Ckn5k2NO9HUe9FY-A</id>
+        <title type="text">Çin internet üzerinden çalışacak "internet mahkemesi" kurdu</title>
+        <summary type="text">Şangay’da, internet hukuku ve ticari davalar konusunda uzmanlaşmış ilk internet mahkemesi kuruldu.</summary>
+        <published>2018-02-09T14:17:51+03:00</published>
+        <updated>2018-02-09T12:30:43Z</updated>
+        <author>
+            <name>NTV</name>
+        </author>
+        <link rel="alternate" href="https://www.ntv.com.tr/teknoloji/cin-internet-uzerinden-calisacak-internet-mahkemesi-kurdu,e2l_8Ckn5k2NO9HUe9FY-A" />
+        <content type="html">&lt;img src="https://cdn1.ntv.com.tr/gorsel/CLbBn_JWD0mTd8xRl3_6YQ.jpg?width=600&amp;mode=crop&amp;scale=both&amp;v=00010101000000000" alt="Çin internet üzerinden çalışacak &amp;quot;internet mahkemesi&amp;quot; kurdu" /&gt;&lt;p&gt;Şangay’da, internet hukuku ve ticari davalar konusunda uzmanlaşmış ilk internet mahkemesi kuruldu.&lt;/p&gt;</content>
+    </entry>
+</feed>

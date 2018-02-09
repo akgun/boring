@@ -1,0 +1,3 @@
+http://feed1
+
+http://feed2
