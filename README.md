@@ -37,3 +37,5 @@ Build executable.
 Run executable with your credentials.
 
 `$ BORING_POCKET_CONSUMER_KEY=<your consumer key> BORING_POCKET_ACCESS_TOKEN=<your access token> ./dist/boring`
+
+For obtaining tokens, read this [article](http://www.jamesfmackenzie.com/getting-started-with-the-pocket-developer-api/).
