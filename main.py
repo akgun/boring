@@ -7,25 +7,49 @@ import app.wiki
 
 @click.group()
 def cli():
+    """Boooring"""
     pass
 
 
-@cli.command('add', help='Add new article to pocket')
+@cli.group()
+def pocket():
+    """Interacts with pocket"""
+    pass
+
+
+@cli.group()
+def wiki():
+    """Interacts with wiki api"""
+    pass
+
+
+@cli.group()
+def feed():
+    """Interacts with feeds"""
+    pass
+
+
+# Pocket commands
+
+@pocket.command('add')
 @click.argument('url')
-def add(url):
+def cmd_pocket_add(url):
+    """Add new article to pocket"""
     pocket_add(url)
 
 
-@cli.command('list', help='List articles in pocket')
-def list_all():
+@pocket.command('list')
+def cmd_pocket_list():
+    """List articles in pocket"""
     for link in pocket_list():
         click.echo(link)
 
 
-@cli.command('find', help='Find articles and save to pocket')
+@pocket.command('populate')
 @click.option('--no-wiki', is_flag=True, default=False, help='Disable wiki find')
 @click.option('--no-feed', is_flag=True, default=False, help='Disable rss feed find')
-def find(no_wiki, no_feed):
+def cmd_pocket_populate(no_wiki, no_feed):
+    """Find articles and save to pocket"""
     found_links = []
     if not no_feed:
         found_links.extend(app.feed.get())
@@ -48,10 +72,21 @@ def find(no_wiki, no_feed):
     pocket_bulk_add(new_links)
 
 
-@cli.command('feed', help='Parse feed url to test')
+# Wiki commands
+
+@wiki.command('list')
+def cmd_wiki_list():
+    """Fetch articles from wiki"""
+    for article in app.wiki.get_articles():
+        click.echo(article)
+
+
+# Feed commands
+
+@feed.command('parse')
 @click.argument('url')
-def feed(url):
-    click.echo('Found links:')
+def cmd_feed_parse(url):
+    """Parse feed url to test"""
     for link in app.feed.parse(url):
         click.echo(link)
 
