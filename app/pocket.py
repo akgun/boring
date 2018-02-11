@@ -6,16 +6,14 @@ from .config import Config
 pocket = Pocket(Config.pocketConsumerKey, Config.pocketAccessToken)
 
 
-def pocket_add(url, tag='boring'):
-    if not url: return
-    pocket.add(url, tags=tag)
-
-
-def pocket_bulk_add(urls, tag='boring'):
-    for url in urls:
-        pocket.bulk_add(url=url, tags=tag)
-    if urls:
-        pocket.commit()
+def pocket_add(urls, tag='boring'):
+    if not urls: return
+    new_urls = set(urls) - set(pocket_list())
+    if not new_urls: return
+    for url in new_urls:
+        print('Adding "%s".' % url)
+        pocket.bulk_add(None, url=url, tags=tag)
+    pocket.commit()
 
 
 def pocket_list(tag='boring'):

@@ -7,13 +7,17 @@ API_URL = 'https://en.wikipedia.org/api/rest_v1/feed/featured/%s'
 URL = 'https://en.wikipedia.org/wiki/%s'
 
 
-def get_articles():
+def get_articles(tfa=True, most_read=True, news=True, on_this_day=True):
     data = requests.get(API_URL % datetime.now().strftime('%Y/%m/%d')).json()
     links = []
-    links.extend(get_tfa(data))
-    links.extend(get_most_read(data))
-    links.extend(get_news(data))
-    links.extend(get_on_this_day(data))
+    if tfa:
+        links.extend(get_tfa(data))
+    if most_read:
+        links.extend(get_most_read(data))
+    if news:
+        links.extend(get_news(data))
+    if on_this_day:
+        links.extend(get_on_this_day(data))
     return links
 
 
