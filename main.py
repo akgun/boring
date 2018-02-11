@@ -60,10 +60,10 @@ def cmd_pocket_feed():
 # Wiki commands
 
 @wiki.command('list')
-@click.option('--no-tfa', default=False, is_flag=True, help='Disable today\'s featured article')
-@click.option('--no-most-read', default=False, is_flag=True, help='Disable most read articles')
-@click.option('--no-news', default=False, is_flag=True, help='Disable new articles')
-@click.option('--no-on-this-day', default=False, is_flag=True, help='Disable on this day articles')
+@click.option('--no-tfa', '-t', default=False, is_flag=True, help='Disable today\'s featured article')
+@click.option('--no-most-read', '-m', default=False, is_flag=True, help='Disable most read articles')
+@click.option('--no-news', '-n', default=False, is_flag=True, help='Disable new articles')
+@click.option('--no-on-this-day', '-o', default=False, is_flag=True, help='Disable on this day articles')
 def cmd_wiki_list(no_tfa, no_most_read, no_news, no_on_this_day):
     """Fetch articles from wiki"""
     for article in app.wiki.get_articles(tfa=not no_tfa,
