@@ -14,7 +14,8 @@ def pocket_add(url, tag='boring'):
 def pocket_bulk_add(urls, tag='boring'):
     for url in urls:
         pocket.bulk_add(url=url, tags=tag)
-    pocket.commit()
+    if urls:
+        pocket.commit()
 
 
 def pocket_list(tag='boring'):

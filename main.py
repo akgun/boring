@@ -32,10 +32,15 @@ def feed():
 # Pocket commands
 
 @pocket.command('add')
-@click.argument('url')
+@click.argument('url', nargs=-1)
 def cmd_pocket_add(url):
     """Add new article to pocket"""
-    pocket_add(url)
+    if not url:
+        # Try pipe
+        stdin = click.get_text_stream('stdin')
+        if not stdin.isatty():
+            url = [line.strip() for line in stdin]
+    pocket_bulk_add(url)
 
 
 @pocket.command('list')
