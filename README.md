@@ -32,7 +32,7 @@ Install requirements.
 
 Build executable.
 
-`$ pyinstaller --onefile main.spec`
+`$ make`
 
 Run executable with your credentials.
 
