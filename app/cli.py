@@ -4,30 +4,32 @@ from . import util
 from . import pocket
 from . import feed
 from . import wiki
+from . import quote
 
 
 @click.group()
 def cli():
     """Boooring"""
-    pass
 
 
 @cli.group('pocket')
 def grppocket():
     """Interacts with pocket"""
-    pass
 
 
 @cli.group('wiki')
 def grpwiki():
     """Interacts with wiki api"""
-    pass
 
 
 @cli.group('feed')
 def grpfeed():
     """Interacts with feeds"""
-    pass
+
+
+@cli.group('quote')
+def grpquote():
+    """Interacts with wikiquote"""
 
 
 # Pocket commands
@@ -81,3 +83,11 @@ def cmd_feed_parse(url):
         url = util.read_stream()
     for link in feed.parse_all(url):
         click.echo(link)
+
+
+# Quote commands
+
+@grpquote.command('today')
+def cmd_quote_today():
+    """Get the quote of the day"""
+    click.echo(quote.today())

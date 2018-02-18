@@ -4,3 +4,4 @@ pocket==0.3.6
 click==6.7
 requests==2.18.4
 PyInstaller==3.3.1
+wikiquote==0.1.6

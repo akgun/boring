@@ -6,7 +6,10 @@ block_cipher = None
 a = Analysis(['main.py'],
              pathex=['.'],
              binaries=[],
-             datas=[],
+             datas=[
+                 # TODO: I'm too old for this shit
+                 ('venv/lib/python3.6/site-packages/wikiquote/langs', 'wikiquote/langs')
+             ],
              hiddenimports=[],
              hookspath=[],
              runtime_hooks=[],
