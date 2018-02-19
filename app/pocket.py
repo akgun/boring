@@ -16,8 +16,8 @@ def pocket_add(urls, tag='boring'):
     pocket.commit()
 
 
-def pocket_list(tag='boring'):
-    response = pocket.get(state='all', tag=tag)
+def pocket_list(tag='boring', state='all'):
+    response = pocket.get(tag=tag, state=state)
     data_list = response[0]['list']
     if not data_list:
         return []

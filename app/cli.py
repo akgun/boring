@@ -44,9 +44,12 @@ def cmd_pocket_add(url):
 
 
 @grppocket.command('list')
-def cmd_pocket_list():
+@click.option('--state', '-s', default='all',
+    type=click.Choice(['unread', 'archive', 'all']),
+    help='Article read state')
+def cmd_pocket_list(state):
     """List articles in pocket"""
-    for link in pocket.pocket_list():
+    for link in pocket.pocket_list(state=state):
         click.echo(link)
 
 
