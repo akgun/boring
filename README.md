@@ -14,25 +14,9 @@ When you save a RSS link (for ex; [NASA RSS](https://www.nasa.gov/rss/dyn/breaki
 
 ## Installation
 
-Change directory.
+Install with pip
 
-`$ cd boring`
-
-Create virtualenv.
-
-`$ python3 -m venv venv`
-
-Activate virtual env.
-
-`$ . venv/bin/activate`
-
-Install requirements.
-
-`$ pip install -r requirements.txt`
-
-Build executable.
-
-`$ make`
+`$ pip install .`
 
 Run executable with your credentials.
 
