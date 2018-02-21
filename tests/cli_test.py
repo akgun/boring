@@ -2,10 +2,10 @@ from unittest.mock import patch
 
 from click.testing import CliRunner
 
-from app.cli import cli
+from boring.cli import cli
 
 
-@patch('app.cli.pocket')
+@patch('boring.cli.pocket')
 def test_pocket_add_no_arg(mock_pocket):
     runner = CliRunner()
     result = runner.invoke(cli, ['pocket', 'add'])
@@ -13,8 +13,8 @@ def test_pocket_add_no_arg(mock_pocket):
     mock_pocket.pocket_add.assert_called_with([])
 
 
-@patch('app.cli.util')
-@patch('app.cli.pocket')
+@patch('boring.cli.util')
+@patch('boring.cli.pocket')
 def test_pocket_add_stream(mock_pocket, mock_util):
     mock_util.read_stream.return_value = ['http://url1.com', 'http://url2.com']
 
@@ -24,7 +24,7 @@ def test_pocket_add_stream(mock_pocket, mock_util):
     mock_pocket.pocket_add.assert_called_with(['http://url1.com', 'http://url2.com'])
 
 
-@patch('app.cli.pocket')
+@patch('boring.cli.pocket')
 def test_pocket_add_one_arg(mock_pocket):
     runner = CliRunner()
     result = runner.invoke(cli, ['pocket', 'add', 'http://url1.com'])
@@ -32,7 +32,7 @@ def test_pocket_add_one_arg(mock_pocket):
     mock_pocket.pocket_add.assert_called_with(('http://url1.com', ))
 
 
-@patch('app.cli.pocket')
+@patch('boring.cli.pocket')
 def test_pocket_add_one_arg(mock_pocket):
     runner = CliRunner()
     result = runner.invoke(cli, ['pocket', 'add', 'http://url1.com', 'http://url2.com'])
@@ -40,7 +40,7 @@ def test_pocket_add_one_arg(mock_pocket):
     mock_pocket.pocket_add.assert_called_with(('http://url1.com', 'http://url2.com'))
 
 
-@patch('app.cli.pocket')
+@patch('boring.cli.pocket')
 def test_pocket_list(mock_pocket):
     mock_pocket.pocket_list.return_value = ['http://article1', 'http://article2']
 
@@ -51,7 +51,7 @@ def test_pocket_list(mock_pocket):
     assert 'http://article2' in result.output
 
 
-@patch('app.cli.pocket')
+@patch('boring.cli.pocket')
 def test_pocket_feed(mock_pocket):
     runner = CliRunner()
     result = runner.invoke(cli, ['pocket', 'feed'])
@@ -59,7 +59,7 @@ def test_pocket_feed(mock_pocket):
     mock_pocket.pocket_list.assert_called_with(tag='feed')
 
 
-@patch('app.cli.wiki')
+@patch('boring.cli.wiki')
 def test_wiki_list(mock_wiki):
     runner = CliRunner()
     result = runner.invoke(cli, ['wiki', 'list'])
@@ -67,7 +67,7 @@ def test_wiki_list(mock_wiki):
     mock_wiki.get_articles.assert_called_with(tfa=True, most_read=True, news=True, on_this_day=True)
 
 
-@patch('app.cli.wiki')
+@patch('boring.cli.wiki')
 def test_wiki_list_no_tfa(mock_wiki):
     runner = CliRunner()
     result = runner.invoke(cli, ['wiki', 'list', '--no-tfa'])
@@ -75,7 +75,7 @@ def test_wiki_list_no_tfa(mock_wiki):
     mock_wiki.get_articles.assert_called_with(tfa=False, most_read=True, news=True, on_this_day=True)
 
 
-@patch('app.cli.wiki')
+@patch('boring.cli.wiki')
 def test_wiki_list_no_tfa_short(mock_wiki):
     runner = CliRunner()
     result = runner.invoke(cli, ['wiki', 'list', '-t'])
@@ -83,7 +83,7 @@ def test_wiki_list_no_tfa_short(mock_wiki):
     mock_wiki.get_articles.assert_called_with(tfa=False, most_read=True, news=True, on_this_day=True)
 
 
-@patch('app.cli.wiki')
+@patch('boring.cli.wiki')
 def test_wiki_list_no_most_read(mock_wiki):
     runner = CliRunner()
     result = runner.invoke(cli, ['wiki', 'list', '--no-most-read'])
@@ -91,7 +91,7 @@ def test_wiki_list_no_most_read(mock_wiki):
     mock_wiki.get_articles.assert_called_with(tfa=True, most_read=False, news=True, on_this_day=True)
 
 
-@patch('app.cli.wiki')
+@patch('boring.cli.wiki')
 def test_wiki_list_no_most_read_short(mock_wiki):
     runner = CliRunner()
     result = runner.invoke(cli, ['wiki', 'list', '-m'])
@@ -99,7 +99,7 @@ def test_wiki_list_no_most_read_short(mock_wiki):
     mock_wiki.get_articles.assert_called_with(tfa=True, most_read=False, news=True, on_this_day=True)
 
 
-@patch('app.cli.wiki')
+@patch('boring.cli.wiki')
 def test_wiki_list_no_news(mock_wiki):
     runner = CliRunner()
     result = runner.invoke(cli, ['wiki', 'list', '--no-news'])
@@ -107,7 +107,7 @@ def test_wiki_list_no_news(mock_wiki):
     mock_wiki.get_articles.assert_called_with(tfa=True, most_read=True, news=False, on_this_day=True)
 
 
-@patch('app.cli.wiki')
+@patch('boring.cli.wiki')
 def test_wiki_list_no_news_short(mock_wiki):
     runner = CliRunner()
     result = runner.invoke(cli, ['wiki', 'list', '-n'])
@@ -115,7 +115,7 @@ def test_wiki_list_no_news_short(mock_wiki):
     mock_wiki.get_articles.assert_called_with(tfa=True, most_read=True, news=False, on_this_day=True)
 
 
-@patch('app.cli.wiki')
+@patch('boring.cli.wiki')
 def test_wiki_list_no_on_this_day(mock_wiki):
     runner = CliRunner()
     result = runner.invoke(cli, ['wiki', 'list', '--no-on-this-day'])
@@ -123,7 +123,7 @@ def test_wiki_list_no_on_this_day(mock_wiki):
     mock_wiki.get_articles.assert_called_with(tfa=True, most_read=True, news=True, on_this_day=False)
 
 
-@patch('app.cli.wiki')
+@patch('boring.cli.wiki')
 def test_wiki_list_no_on_this_day_short(mock_wiki):
     runner = CliRunner()
     result = runner.invoke(cli, ['wiki', 'list', '-o'])
@@ -131,7 +131,7 @@ def test_wiki_list_no_on_this_day_short(mock_wiki):
     mock_wiki.get_articles.assert_called_with(tfa=True, most_read=True, news=True, on_this_day=False)
 
 
-@patch('app.cli.wiki')
+@patch('boring.cli.wiki')
 def test_wiki_list_mixed(mock_wiki):
     runner = CliRunner()
     result = runner.invoke(cli, ['wiki', 'list', '-mo'])
@@ -139,7 +139,7 @@ def test_wiki_list_mixed(mock_wiki):
     mock_wiki.get_articles.assert_called_with(tfa=True, most_read=False, news=True, on_this_day=False)
 
 
-@patch('app.cli.feed')
+@patch('boring.cli.feed')
 def test_feed_parse_no_url(mock_feed):
     runner = CliRunner()
     result = runner.invoke(cli, ['feed', 'parse'])
@@ -147,7 +147,7 @@ def test_feed_parse_no_url(mock_feed):
     mock_feed.parse_all.assert_called_with([])
 
 
-@patch('app.cli.feed')
+@patch('boring.cli.feed')
 def test_feed_parse_one_url(mock_feed):
     runner = CliRunner()
     result = runner.invoke(cli, ['feed', 'parse', 'http://feed1'])
@@ -155,7 +155,7 @@ def test_feed_parse_one_url(mock_feed):
     mock_feed.parse_all.assert_called_with(('http://feed1', ))
 
 
-@patch('app.cli.feed')
+@patch('boring.cli.feed')
 def test_feed_parse_two_url(mock_feed):
     runner = CliRunner()
     result = runner.invoke(cli, ['feed', 'parse', 'http://feed1', 'http://feed2'])
@@ -163,8 +163,8 @@ def test_feed_parse_two_url(mock_feed):
     mock_feed.parse_all.assert_called_with(('http://feed1', 'http://feed2'))
 
 
-@patch('app.cli.util')
-@patch('app.cli.feed')
+@patch('boring.cli.util')
+@patch('boring.cli.feed')
 def test_feed_parse_stream(mock_feed, mock_util):
     mock_util.read_stream.return_value = ['http://feed1', 'http://feed2']
 

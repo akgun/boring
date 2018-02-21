@@ -1,4 +1,4 @@
-from app.wiki import get_tfa, get_most_read, get_news, get_on_this_day
+from boring.wiki import get_tfa, get_most_read, get_news, get_on_this_day
 from . import read_json_data_file
 
 

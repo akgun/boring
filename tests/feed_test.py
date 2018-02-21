@@ -1,4 +1,4 @@
-from app.feed import parse, parse_all
+from boring.feed import parse, parse_all
 
 from . import get_data_file
 
