@@ -21,7 +21,9 @@ Install with pip
 Run executable with your credentials.
 
 `$ export BORING_POCKET_CONSUMER_KEY=<your consumer key>`
+
 `$ export BORING_POCKET_ACCESS_TOKEN=<your access token>`
+
 `$ boring`
 
 For obtaining tokens, read this [article](http://www.jamesfmackenzie.com/getting-started-with-the-pocket-developer-api/).
