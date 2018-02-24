@@ -1,9 +1,9 @@
 from pocket import Pocket
 
-from .config import Config
+from . import config
 
 
-pocket = Pocket(Config.pocketConsumerKey, Config.pocketAccessToken)
+pocket = Pocket(config.POCKET_CONSUMER_KEY, config.POCKET_ACCESS_TOKEN)
 
 
 def pocket_add(urls, tag='boring'):

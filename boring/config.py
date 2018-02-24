@@ -1,6 +1,5 @@
 import os
 
 
-class Config:
-    pocketConsumerKey = os.environ.get('BORING_POCKET_CONSUMER_KEY')
-    pocketAccessToken = os.environ.get('BORING_POCKET_ACCESS_TOKEN')
+POCKET_CONSUMER_KEY = os.environ.get('BORING_POCKET_CONSUMER_KEY')
+POCKET_ACCESS_TOKEN = os.environ.get('BORING_POCKET_ACCESS_TOKEN')
