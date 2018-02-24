@@ -38,8 +38,6 @@ def grpeksi():
     """Interacts with eksiseyler"""
 
 
-# Pocket commands
-
 @grppocket.command('add')
 @click.argument('url', nargs=-1)
 def cmd_pocket_add(url):
@@ -66,8 +64,6 @@ def cmd_pocket_feed():
         click.echo(link)
 
 
-# Wiki commands
-
 @grpwiki.command('list')
 @click.option('--no-tfa', '-t', default=False, is_flag=True, help='Disable today\'s featured article')
 @click.option('--no-most-read', '-m', default=False, is_flag=True, help='Disable most read articles')
@@ -82,8 +78,6 @@ def cmd_wiki_list(no_tfa, no_most_read, no_news, no_on_this_day):
         click.echo(article)
 
 
-# Feed commands
-
 @grpfeed.command('parse')
 @click.argument('url', nargs=-1)
 def cmd_feed_parse(url):
@@ -94,15 +88,11 @@ def cmd_feed_parse(url):
         click.echo(link)
 
 
-# Quote commands
-
 @grpquote.command('today')
 def cmd_quote_today():
     """Get the quote of the day"""
     click.echo(quote.today())
 
-
-# Eksi commands
 
 @grpeksi.command('list')
 def cmd_eksi_list():
