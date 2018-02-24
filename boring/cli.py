@@ -5,6 +5,7 @@ from . import pocket
 from . import feed
 from . import wiki
 from . import quote
+from . import eksiseyler
 
 
 @click.group()
@@ -30,6 +31,11 @@ def grpfeed():
 @cli.group('quote')
 def grpquote():
     """Interacts with wikiquote"""
+
+
+@cli.group('eksi')
+def grpeksi():
+    """Interacts with eksiseyler"""
 
 
 # Pocket commands
@@ -94,3 +100,11 @@ def cmd_feed_parse(url):
 def cmd_quote_today():
     """Get the quote of the day"""
     click.echo(quote.today())
+
+
+# Eksi commands
+
+@grpeksi.command('list')
+def cmd_eksi_list():
+    for link in eksiseyler.get_links():
+        click.echo(link)

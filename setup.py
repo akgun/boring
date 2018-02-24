@@ -10,7 +10,8 @@ setup(
         'requests',
         'pocket',
         'feedparser',
-        'wikiquote'
+        'wikiquote',
+        'lxml'
     ],
     entry_points={
         'console_scripts': [
