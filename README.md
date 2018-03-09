@@ -16,7 +16,7 @@ When you save a RSS link (for ex; [NASA RSS](https://www.nasa.gov/rss/dyn/breaki
 
 Install with pip
 
-`$ pip install git+https://github.com/akgun/boring#egg=boring`
+`$ pip3 install git+https://github.com/akgun/boring#egg=boring`
 
 Run executable with your credentials.
 
